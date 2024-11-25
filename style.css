@@ -28,7 +28,8 @@ body {
 }
 
 .navbar .logo {
-    width: 160px;
+    width: 200px; /* Increased size */
+    height: auto;
     cursor: pointer;
 }
 
@@ -120,12 +121,22 @@ ul li a:hover {
 
 /* Section Styling */
 .block {
+    display: none; /* Hide all sections initially */
     margin: 50px auto; /* Space between sections */
     padding: 20px 50px; /* Padding inside sections */
     background-color: rgba(255, 218, 185, 0.9); /* Transparent peach */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 80%; /* Center sections with defined width */
+    opacity: 0; /* For fade-in effect */
+    transform: translateY(20px); /* For sliding effect */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
+
+.block.active {
+    display: block; /* Display the active section */
+    opacity: 1; /* Make visible */
+    transform: translateY(0); /* Reset position */
 }
 
 /* Section Titles */
